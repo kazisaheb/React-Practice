@@ -1,0 +1,11 @@
+.App{
+  color: red;
+  text-align: center;
+}
+
+button{
+  margin: 0 5px;
+  }
+button:focus{
+    background-color:aqua;
+  }
