@@ -8,10 +8,9 @@ function ExUser() {
       .then(res => res.json())
       .then(data => setUsers(data))
   }, [])
-  return <div>
+  return <div className='div' >
     {
-      users.map(user => <div className='Users' >
-
+      users.map(user => <div className='Users' key={user.id} >
         <h1>Name: {user.name}</h1>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>

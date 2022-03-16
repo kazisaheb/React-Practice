@@ -1,5 +1,12 @@
+.div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .Users{
   background-color: bisque;
   margin: 10px;
+  padding: 0 10px;
+  max-width: 300px;
   border: 5px solid gray;
 }
