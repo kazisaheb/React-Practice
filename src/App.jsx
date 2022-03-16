@@ -4,8 +4,7 @@ import './App.css';
 function App() {
   return <div className='App'>
 
-    <ExUser />
-
+    <Clock />
   </div>
 }
 
@@ -25,13 +24,12 @@ function ExUser() {
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
         <p>Address: {user.address.street} , {user.address.city} </p>
-
+        <Count />
       </div>)
     }
+
   </div>
 }
-
-
 
 //Counter componant
 function Count() {
@@ -45,5 +43,17 @@ function Count() {
   </div>
 }
 
+// React clock
+function Clock() {
+  const [time, setTime] = useState()
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date().toLocaleTimeString())
+    }, 1000);
+  }, [])
+  return <div>
+    <h1>Current time: {time}</h1>
+  </div>
+}
 
 export default App;

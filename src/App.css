@@ -4,14 +4,14 @@
 }
 
 button{
-  margin: 0 5px;
+  margin: 5px;
   }
 button:focus{
     background-color:aqua;
   }
 
 .Users{
-  background-color: aqua;
+  background-color: bisque;
   margin: 10px;
-  border: 5px solid red;
+  border: 5px solid gray;
 }
