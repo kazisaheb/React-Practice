@@ -4,7 +4,9 @@ import './App.css';
 function App() {
   return <div className='App'>
 
+    <Count />
     <Clock />
+
   </div>
 }
 
@@ -35,25 +37,19 @@ function ExUser() {
 function Count() {
   const [count, setCount] = useState(0)
   const plus = () => setCount(count + 1)
-  const down = () => setCount(count - 1)
+  const minus = () => { if (count > 0) { setCount(count - 1) } }
   return <div>
     <h1>Count: {count}</h1>
+    <button onClick={minus}>Minus</button>
     <button onClick={plus}>Plus</button>
-    <button onClick={down}>Down</button>
   </div>
 }
 
 // React clock
 function Clock() {
   const [time, setTime] = useState()
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date().toLocaleTimeString())
-    }, 1000);
-  }, [])
-  return <div>
-    <h1>Current time: {time}</h1>
-  </div>
+  useEffect(() => setInterval(() => setTime(new Date().toLocaleTimeString()), 1000), [])
+  return <h1>Current time: {time}</h1>
 }
 
 export default App;
